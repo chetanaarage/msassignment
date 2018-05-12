@@ -1,0 +1,56 @@
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+ }
+ 
+
+mat-card {
+    flex: auto;
+    box-sizing: border-box;
+    border:1px solid black;
+    margin: 15px;
+    position: relative;
+}
+
+.infoButton{
+    margin-left: 20px;
+    margin-bottom:3px;
+    background:none;
+    border: 0px;
+    padding:0;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.openButton{
+    float: right;
+    margin-right: 20px;
+    margin-top:11px;
+    background:none;
+    border: 0px;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.favIcon{
+    float: right;
+    margin-top: -33px;
+    margin-right: -21px;
+    cursor:pointer;
+}
+/*The media queries are where the number of cards is determined:
+ 
+@media screen and (min-width: 40em) {
+    mat-card {
+       max-width: calc(50% -  2em);
+    }
+}
+ 
+@media screen and (min-width: 60em) {
+    mat-card {
+        max-width: calc(25% - 2em);
+    }
+}*/

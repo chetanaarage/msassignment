@@ -1,0 +1,110 @@
+<div>
+  <h1>
+   Morgan Stanley
+  </h1>
+  <h3>MS Assignment</h3>
+  <p>Total No Of Favorites: {{favCounts.favC}}</p>
+  <p>Total NO of Non Favorites:{{favCounts.nonfc}}</p>
+  <!-- {{nonFavCount}} -->
+</div>
+<h6>Toggle button to get favourites and all items
+  <button (click)="getFavoriteItems()"> getFavourites</button></h6>
+
+<div *ngIf="favItems">
+    <section class="cards">
+    <mat-card  *ngFor="let item of favs;let item=index;"  
+    fxFlex.xs="100%" fxFlex.sm="45%" 
+    fxFlex.md="45%" fxFlex.lg="30%"> 
+
+    <!-- <button (click)="getFavouritesCount()">Favourites</button>
+    
+    <button (click)="getNonFavourites()">NOTfAvourites</button> -->
+    <!-- fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" -->
+        <mat-card-content>
+        <div>
+        <h6 style="text-align: center">{{item.company}}
+        <!-- <span matTooltip="Make the item as your favourite">hiii</span> -->
+        <span (click)="makeFavourite(item)">
+          <i *ngIf="!item.isFavourite"  class="material-icons favIcon" title="Add to Favourites">
+            star_border
+          </i>
+        </span>
+        <span (click)="RemoveFavourite(item)">
+            <i *ngIf="item.isFavourite"  class="material-icons favIcon" title="Remove from Favourites">
+              star
+            </i>
+        </span>
+        </h6>
+      </div>
+      </mat-card-content>
+       <!-- <div style="border:1px solid black"></div> -->
+       <mat-card-actions>
+       <div class="row" style="border-bottom:1px solid black;margin:-8px">
+        <button  class="infoButton" (click)="openDialog(item)">Info</button>
+       </div>
+        <div class="row">
+          <button  class="openButton" (click)="getCardDetails(item._id)">Open
+        </button>
+       <!--  <button mat-button  align="end" (click)="getCardDetails(item._id)" 
+          style="float: right;margin-right: 20px;margin-top:11px">Open
+        </button> -->
+      </div>
+    <!--  <button md-raised-buton [routerLink]="['card-detail',item._id]">Open</button> -->
+    </mat-card-actions>
+    </mat-card>
+               
+ 
+    </section>
+
+</div>
+
+<div *ngIf="!favItems">
+    <section class="cards">
+    <mat-card  *ngFor="let item of items;let item=index;"  
+    fxFlex.xs="100%" fxFlex.sm="45%" 
+    fxFlex.md="45%" fxFlex.lg="30%"> 
+
+    <!-- <button (click)="getFavouritesCount()">Favourites</button>
+    
+    <button (click)="getNonFavourites()">NOTfAvourites</button> -->
+    <!-- fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center" -->
+        <mat-card-content>
+        <div>
+        <h6 style="text-align: center">{{item.company}}
+        <!-- <span matTooltip="Make the item as your favourite">hiii</span> -->
+        <span (click)="makeFavourite(item)">
+          <i *ngIf="!item.isFavourite"  class="material-icons favIcon" title="Add to Favourites">
+            star_border
+          </i>
+        </span>
+        <span (click)="RemoveFavourite(item)">
+            <i *ngIf="item.isFavourite"  class="material-icons favIcon" title="Remove from Favourites">
+              star
+            </i>
+        </span>
+        </h6>
+      </div>
+      </mat-card-content>
+       <!-- <div style="border:1px solid black"></div> -->
+       <mat-card-actions>
+       <div class="row" style="border-bottom:1px solid black;margin:-8px">
+        <button  class="infoButton" (click)="openDialog(item)">Info</button>
+       </div>
+        <div class="row">
+          <button  class="openButton" (click)="getCardDetails(item._id)">Open
+        </button>
+       <!--  <button mat-button  align="end" (click)="getCardDetails(item._id)" 
+          style="float: right;margin-right: 20px;margin-top:11px">Open
+        </button> -->
+      </div>
+    <!--  <button md-raised-buton [routerLink]="['card-detail',item._id]">Open</button> -->
+    </mat-card-actions>
+    </mat-card>
+               
+ 
+    </section>
+
+</div>
+
+
+
